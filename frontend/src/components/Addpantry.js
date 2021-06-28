@@ -29,7 +29,7 @@ function Addpantry() {
 
     return (
         <div>
-            <form onSubmit={savePantryData} class="ui huge form">
+            <form onSubmit={savePantryData} class="ui form">
                 <div class="field">
                     <div class="field">
                          <input type="text" name="itemName" placeholder="Enter item name" onChange={(e)=>{
