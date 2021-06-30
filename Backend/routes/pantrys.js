@@ -30,7 +30,10 @@ router.route("/add").post((req,res)=>{
 
 
 //view pantry items
-router.route("/").get((req,res)=>{
+router.route("/view").get((req,res)=>{
+ 
+
+
       pantry.find().then((pantry)=>{
         res.json(pantry);
       }).catch((err)=>{
