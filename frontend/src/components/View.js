@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './Styles/View.css';
 
 class View extends Component {
 
@@ -33,7 +34,7 @@ class View extends Component {
     }
 
     retriveData(){
-        axios.get("http://localhost:8070/pantry/").then((res)=>{
+        axios.get("http://localhost:8070/pantry/view").then((res)=>{
             this.setState({
                 pantry:res.data
 
@@ -45,13 +46,14 @@ class View extends Component {
     render() {
         return (
             <div>
+               <div class="box">
                 <table class="ui celled table">
                     <thead>
                        
                             <th>Item name</th>
                             <th>Item size</th>
                             <th>Expire Date</th>
-                            <th>Id</th>
+                           
                             <th>Action</th>
                        
                     </thead>
@@ -65,15 +67,16 @@ class View extends Component {
                                    <td>{pantry.size}</td>
                                    <td>{pantry.expDate}</td>
                                    
-                                   <td><button class="positive ui button" onClick={()=>this.editPantry(pantry._id)}>Update</button></td>
-                                   {console.log(pantry._id)}
-                                   <td><button class="negative ui button" onClick={()=>this.deletePantry(pantry._id)}>Delete</button></td>
+                                   <td><button class="positive ui  button" onClick={()=>this.editPantry(pantry._id)}><i class=" white edit icon"></i>Update</button>
+                                   {console.log(pantry._id)} 
+                                  <button class="negative ui  button" onClick={()=>this.deletePantry(pantry._id)}><i class=" white trash icon"></i>Delete</button></td>
                                   
                                </tr>
                            )
                        }
                     </tbody>
                 </table>
+                </div>   
             </div>
         );
     }
