@@ -29,9 +29,14 @@ connection.once("open",() => {
        console.log("mongo db connection success");
 });
 
+//pantry management
 const pantryRoute = require("./routes/pantrys.js");
 
 app.use("/pantry",pantryRoute);
+
+//user registration
+const userRoute = require("./routes/users.js");
+app.use("/user",userRoute);
 
 app.listen(PORT,() => {
     console.log("SERVER IS RUNNNING ON ${PORT}");
