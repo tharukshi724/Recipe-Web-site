@@ -11,15 +11,29 @@ import UpdatePantry from './components/UpdatePantry';
 
 import Navbar from './components/Navbar';
 
+
+import Landingpage from './components/Landingpage';
+import Cake from './components/Cake';
+import Soup from './components/Soup';
+import Rice from './components/Rice';
+import Bakery from './components/Bakery';
+import RecipeUpload from './components/RecipeUpload';
+
 function App() {
   return (
     <Router>
      
     <div>
      
-     
+    <Route path = "/landing" exact component = {Landingpage}></Route>
       <Route path = "/login" exact component = {Login}></Route>
       <Route path = "/register" exact component = {Register}></Route>
+      <Route path = "/cake" exact component = {Cake}></Route>
+      <Route path = "/soup" exact component = {Soup}></Route>
+      <Route path = "/rice" exact component = {Rice}></Route>
+      <Route path = "/bakery" exact component = {Bakery}></Route>
+      <Route path = "/upload" exact component ={RecipeUpload}></Route>
+   
       <Route path = "/Addpantry" exact component = {Addpantry}></Route>
       <Route path = "/view" exact component = {View}></Route>
       <Route path = "/updatePantry/:id" exact component = {UpdatePantry}></Route>
