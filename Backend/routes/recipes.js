@@ -1,44 +1,65 @@
 const router = require("express").Router();
-const fs = require('fs');
-const path = require('path');
-
-
 const { request } = require("express");
-let upload = require("../server");
+const upload = require("../middleware/upload");
+
 let recipe = require("../model/recipe");
 
 
 
 
 //upload recipe
-router.post('/uploadRecipe',upload.single('myimage'), (req,res,next)=>{
+router.post("/upload",upload.single('image'),(req,res)=>{
 
+  const title = req.body.title;
   
-    console.log(req.file);
-    const title =req.body.title;
-    const ingredients = req.body.ingredients;
-    const time  = req.body.time;
-    const instructions = req.body.instructions;
-    const image= req.file.path;
+  const ingredients = req.body.ingredients;
+  const time = req.body.time;
+  const instructions = req.body.instructions;
+ 
 
-    const newRecipe = new recipe({
-      title:title,
-      ingredients:ingredients,
-      time:time,
-      instructions:instructions,
-      image:image
-    })
+  const newRecipe = new recipe({
+     title,
+     ingredients,
+     time,
+     instructions
+   })
 
-   newRecipe.save((err,newRecipe)=>{
-      if(err){
+   if(req.file){
+    newRecipe.image= req.file.path
+   
+  }
+  
 
-          console.log(err);
-      }
-      else{
-          item.save();
-      }
-    });
+  newRecipe.save().then(()=>{
+    res.json("recipe added");
+}).catch((err)=>{
+      console.log(err);
+})
+
 });
+
+//view recipes
+
+router.route("/viewRecipes").get((req,res)=>{
+       recipe.find().then((recipe)=>{
+              res.json(recipe);
+       }).catch((err)=>{
+         console.log(err);
+       })
+})
+
+//view one recipe
+
+router.routr("/recipe/:id").get((req,res)=>{
+
+  const id = req.param.id;
+recipe.findById(id).then((recipe)=>{
+    res.json(recipe);
+}).catch((err)=>{
+  console.log(err);
+})
+
+})
 
 
 module.exports = router;
