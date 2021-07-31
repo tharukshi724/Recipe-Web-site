@@ -18,6 +18,7 @@ import Soup from './components/Soup';
 import Rice from './components/Rice';
 import Bakery from './components/Bakery';
 import RecipeUpload from './components/RecipeUpload';
+import MyRecipes from './components/MyRecipes';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       <Route path = "/rice" exact component = {Rice}></Route>
       <Route path = "/bakery" exact component = {Bakery}></Route>
       <Route path = "/upload" exact component ={RecipeUpload}></Route>
+      <Route path = "/viewRecipe" exact component ={MyRecipes}></Route>
+   
    
       <Route path = "/Addpantry" exact component = {Addpantry}></Route>
       <Route path = "/view" exact component = {View}></Route>
