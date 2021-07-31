@@ -10,7 +10,7 @@ router.route("/add").post((req,res)=>{
     const size = req.body.size;
     const expDate = Date(req.body.expDate);
   
-
+    console.log(itemName,size,expDate);
     const newPantry = new pantry({
           
         itemName,
