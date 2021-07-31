@@ -1,3 +1,4 @@
+
 .fContainer{
     width:500px;
     height:600px;
@@ -10,9 +11,9 @@
     left:14%;
     
 }
-.container{
+.title{
     position:absolute;
-    top:17%;
+    top:15%;
    right:22%;
     
 }
@@ -20,7 +21,7 @@
     width:450px;
     
     position:absolute;
-    top:45%;
+    top:30%;
     right:14%;
    
 }
