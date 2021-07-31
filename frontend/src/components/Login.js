@@ -1,6 +1,6 @@
 import React,{useRef,useState,useEffect} from 'react';
-import back from './images/back.png';
-import loginimg from './images/loginimg.png';
+import whole from './images/whole.png';
+import signin from './images/signin.png';
 import profile from './images/profile.png';
 
 import { Link } from "react-router-dom";
@@ -37,16 +37,18 @@ export default function Login() {
    
     return (
         <div>
+            
+          <div className="fullBody">
             <div className="fContainer">
-              <img src={back} ></img>
+              <img src={whole} ></img>
             </div>
       
           <div className="log-img-setting">
-              <img src={loginimg} width="600px"></img>
+            <img src={signin}></img>
           </div>
 
              <div className="container">
-                 <img src={profile} width="200px"></img>
+                 <img src={profile}></img>
               </div>
                  <div className="title">
                      <h1>Welcome</h1>
@@ -67,13 +69,14 @@ export default function Login() {
                          </div>
                          <Link to="#" className="linkTo">Forget Password</Link>
                         
-                             <button type="submit" className="fluid ui orange big button">Login</button>
+                             <button type="submit" className="fluid ui medium sea green big button">Login</button>
                           
                      </form>
 
                     
                       
                     
+                 </div>
                  </div>
         </div>
     )

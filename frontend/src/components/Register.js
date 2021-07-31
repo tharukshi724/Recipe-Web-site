@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import back from './images/back.png';
-import register from './images/register.png';
+import whole from './images/whole.png';
+import signup from './images/signup.png';
 import profile from './images/profile.png';
 
 import { Link } from "react-router-dom";
@@ -38,19 +38,22 @@ export default function Register() {
 
     return (
         <div>
+            <div className="fullBody">
+
+            
             <div className="fContainer">
-              <img src={back} ></img>
+              <img src={whole} ></img>
             </div>
       
           <div className="log-img-setting">
-              <img src={register} width="600px"></img>
+              <img src={signup} width="600px"></img>
           </div>
 
              <div className="container">
-                 <img src={profile} width="200px"></img>
+                
               </div>
                  <div className="title">
-                     <h1>Welcome</h1>
+                     <h1>SIGNUP</h1>
                      
                  </div>
                  <div class="wrapper">
@@ -90,7 +93,7 @@ export default function Register() {
                          </div>
                          <Link to="#" className="linkTo">Already SignUp</Link>
                         
-                             <button type="submit" className="fluid ui orange big button">Sign Up</button>
+                             <button type="submit" className="fluid ui medium sea green big button">Sign Up</button>
                           
                      </form>
 
@@ -98,6 +101,7 @@ export default function Register() {
                       
                     
                  </div>
+                 </div>    
         </div>
     )
 }

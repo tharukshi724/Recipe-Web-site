@@ -1,0 +1,44 @@
+
+.imgCon img{
+    position: absolute;
+    top:15%;
+    left:15%;
+   
+    width:30%;
+    height:95%;
+  
+    
+}
+.imgCon:after {
+    content: '\A';
+    position: absolute;
+    width:30%; height:95%;
+    top:15%;
+    left:15%;
+    background:rgba(0,0,0,0.6);
+    opacity: 1;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+h1 {
+    text-align: justify;
+    font-size: large;
+    color:whitesmoke;
+    position: absolute;
+    top:25%;
+    left:23%;
+
+  }
+  p{
+    text-align: center;
+    font-size:medium;
+    color:rgb(19, 88, 85);
+  }
+.container{
+    position: absolute;
+    padding:40px 40px 40px 40px;
+    left:45%;
+    width:40%;
+    height:95%;
+    background-color:whitesmoke;
+}
