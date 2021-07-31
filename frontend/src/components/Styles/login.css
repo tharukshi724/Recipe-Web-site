@@ -1,19 +1,37 @@
-.fContainer{
-   
-    background-color: cornflowerblue;
+.fullBody{
+
+    height:900px;
+    background-color:#2CB977;
+}
+.fContainer img{
+    width:80%;
+    height:80%;
+  
+    position: absolute;
+    left:10%;
 
 }
+@media only screen and (min-width: 1200px) {
+    .fContainer {
+      width: 84%;
+    }
+  }
 .log-img-setting{
-    
+    width:50%;
+    height:50%;
     position:absolute;
     top:18%;
-    left:14%;
+    left:50%;
+   
     
 }
-.container{
+
+.container {
+    width:25%;
+    height:25%;
     position:absolute;
-    top:17%;
-   right:22%;
+    top:15%;
+     right:50%;
     
 }
 .wrapper{
